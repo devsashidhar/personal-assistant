@@ -20,8 +20,8 @@ def authenticate_google_calendar():
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
                 'credentials.json', SCOPES)
-            flow.redirect_uri = 'http://localhost:60550/'
-            creds = flow.run_local_server(port=60550)
+            flow.redirect_uri = 'http://localhost:60440/'
+            creds = flow.run_local_server(port=60440)
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
     service = build('calendar', 'v3', credentials=creds)
